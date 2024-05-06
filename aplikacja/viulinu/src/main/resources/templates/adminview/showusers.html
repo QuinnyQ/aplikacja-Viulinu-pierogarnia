@@ -1,0 +1,99 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Yerba O'clock</title>
+  <link rel="icon" type="image/x-icon" href="https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/322943144_556133569726749_7528360849138846753_n.png?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OI7dufZrxY0AX_yH0iV&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdQfXI6UTD6eKzNwoYlYQiHeTlcH0XeaE9NvvvZiLDa-6w&oe=64115215">
+
+  <style>
+
+    *
+    {
+      text-align: center;
+    }
+
+    body {
+    }
+
+    div#karta
+    {
+      background-color: rgb(255, 249, 224);
+      border: 4px solid blanchedalmond;
+    }
+
+    .row img
+    {
+      padding-top: 5%;
+      padding-bottom: 5%;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+    }
+
+    .row
+    {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .container{
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .cart{
+      border: 1px solid #FCEEE3;
+    }
+
+  </style>
+</head>
+<body class="bg-light bg-light d-flex flex-column min-vh-100">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<header th:replace="fragments/header :: header"></header>
+<main class="bg-light">
+  <div class="container">
+    <div>
+      <br>
+      <h3>UŻYTKOWNICY</h3>
+    </div>
+    <section class="h-100">
+      <div class="container h-100 py-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12">
+            <div class="card rounded-3 mb-3 cart" th:each="user : ${users}">
+              <div class="card-body p-4">
+                <div class="row d-flex justify-content-between align-items-center" >
+                  <div class="col-3">
+                    <p class="fs-5" th:text="${user.id}"></p>
+                  </div>
+                  <div class="col-3">
+                    <p class="fs-5" th:text="${user.username}"></p>
+                  </div>
+                  <div class="col-3">
+                    <p class="fs-5" th:text="${user.email}"></p>
+                  </div>
+                  <div class="col-3">
+                    <p class="fs-5" th:text="${user.role}"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer mt-auto py-3 bg-dark">
+  <span class="text-muted">Yerba O'clock</span>
+</footer>
+</body>
+</html>

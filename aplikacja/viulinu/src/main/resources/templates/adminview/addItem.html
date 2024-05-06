@@ -1,0 +1,108 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <title>Yerba O'clock</title>
+    <link rel="icon" type="image/x-icon" href="https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/322943144_556133569726749_7528360849138846753_n.png?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OI7dufZrxY0AX_yH0iV&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdQfXI6UTD6eKzNwoYlYQiHeTlcH0XeaE9NvvvZiLDa-6w&oe=64115215">
+
+    <style>
+
+        *
+        {
+            text-align: center;
+        }
+
+        .row img
+        {
+            padding-top: 5%;
+            padding-bottom: 5%;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+        }
+
+        .row
+        {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .container{
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+
+
+
+    </style>
+</head>
+<body class="bg-light bg-light d-flex flex-column min-vh-100">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<header th:replace="fragments/header :: header"></header>
+<main>
+    <div class="container" >
+        <div>
+            <br>
+            <h3>DODAJ NOWY PRODUKT</h3>
+            <br>
+        </div>
+        <div class="row justify-content-center">
+
+            <form th:action="@{/admin}" method="post" class="col-sm-8">
+
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label" >Podaj nazwę produktu</label>
+                    <input type="text" name="name" maxlength="200" class="form-control cart" id="exampleInputName1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPrice1" class="form-label">Podaj cenę</label>
+                    <input type="text" name="price" maxlength="10" class="form-control cart" id="exampleInputPrice1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputImage1" class="form-label">Podaj adres URL zdjęcia</label>
+                    <input type="text" name="imgUrl" class="form-control cart" id="exampleInputImage1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputDesc1" class="form-label">Podaj opis (max. 255 znaków)</label>
+                    <textarea name="desc" maxlength="255" title="Maksymalnie 255 znaków" row="3" class="form-control cart" id="exampleInputDesc1" required>
+                    </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputIngre1" class="form-label">Podaj składniki (dla Yerby)</label>
+                    <textarea name="ingredients" row="3" maxlength="255" class="form-control cart" id="exampleInputIngre1">
+                    </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputTaste1" class="form-label">Podaj smak/aromat (dla Yerby)</label>
+                    <textarea name="taste" row="3" maxlength="255" class="form-control cart" id="exampleInputTaste1">
+                    </textarea>
+                </div>
+                <div class="mb-3">
+                    <select name="category" class="form-select" aria-label="Default select example">
+                        <option selected>Wybierz kategorię</option>
+                        <option value="ZIELONA YERBA MATE">Zielona yerba mate</option>
+                        <option value="ORGANICZNA YERBA MATE">Organiczna yerba mate</option>
+                        <option value="KOLOROWE NACZYNKA">Kolorowe naczynka</option>
+                        <option value="TYKWY W SWETERKU">Tykwy w sweterku</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-warning my-2 my-sm-0">Dodaj produkt</button>
+            </form>
+        </div>
+    </div>
+</main>
+<footer class="footer mt-auto py-3 bg-dark">
+    <span class="text-muted">Yerba O'clock</span>
+</footer>
+</body>
+</html>

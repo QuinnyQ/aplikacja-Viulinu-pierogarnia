@@ -1,0 +1,95 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Yerba O'clock</title>
+  <link rel="icon" type="image/x-icon" href="https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/322943144_556133569726749_7528360849138846753_n.png?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OI7dufZrxY0AX_yH0iV&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdQfXI6UTD6eKzNwoYlYQiHeTlcH0XeaE9NvvvZiLDa-6w&oe=64115215">
+
+  <style>
+
+    *
+    {
+      text-align: center;
+    }
+
+    .row img
+    {
+      padding-top: 5%;
+      padding-bottom: 5%;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+    }
+
+    .row
+    {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .container{
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .register{
+      color: black;
+    }
+    .register:hover{
+      color: #DE9D00;
+    }
+    .btn-warning {
+      background: #DE9D00;
+    }
+
+  </style>
+</head>
+<body class="bg-light bg-light d-flex flex-column min-vh-100">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<header th:replace="fragments/header :: header"></header>
+
+<main >
+<div class="container" >
+  <div>
+    <br>
+    <h3>REJESTRACJA</h3>
+    <br>
+  </div>
+  <div class="row justify-content-center">
+
+    <form th:action="@{/registerpost}" method="post" class="col-sm-8">
+
+      <div class="mb-3">
+        <label for="exampleInputUsername1" class="form-label" >Podaj nazwę użytkownika</label>
+        <input type="text" name="username" maxlength="30" class="form-control" id="exampleInputUsername1" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Podaj adres email</label>
+        <input type="email" name="email"  maxlength="30" class="form-control" id="exampleInputEmail1" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Podaj hasło</label>
+        <input type="password" name="password" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+               title="Wymagane: - co najmniej 8 znaków  - co najmniej jedna duża i mała litera  - co najmniej jedna cyfra" class="form-control" id="exampleInputPassword1" required>
+      </div>
+      <input type="hidden" name="role" value="ROLE_USER">
+      <button type="submit" class="btn btn-warning my-2 my-sm-0">Zarejestruj się</button>
+    </form>
+  </div>
+  <br><br><br>
+  <h5>Masz już konto?</h5>
+  <a class="nav-link register" th:href="@{/login}">Zaloguj się</a>
+</div>
+</main>
+<footer class="footer mt-auto py-3 bg-dark">
+  <span class="text-muted">Yerba O'clock</span>
+</footer>
+</body>
+</html>

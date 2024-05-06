@@ -1,0 +1,28 @@
+*
+{
+    text-align: center;
+}
+
+
+div#karta
+{
+    background-color: rgb(255, 249, 224);
+    border: 4px solid blanchedalmond;
+}
+
+.row img
+{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+}
+
+.row
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
